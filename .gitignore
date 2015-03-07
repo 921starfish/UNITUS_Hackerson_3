@@ -24,3 +24,17 @@ proguard/
 
 # Log Files
 *.log
+
+# Add
+.classpath
+.project
+*.iml
+*.ipr
+*.ips
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/libraries/
+.idea/dictionary/
+.idea/module.xml
+app/build/
+.DS_Store
