@@ -16,7 +16,7 @@
         android:id="@+id/imageview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/chiri_illustration_01"
+        android:src="@drawable/flower1"
         android:scaleType="fitStart"
         android:contentDescription="画像の説明"/>
 
