@@ -1,10 +1,14 @@
 package com.example.q21starfish.unitus_hackerson_3;
 
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
