@@ -29,7 +29,7 @@ public class SimpleView extends View {
     }
 
     public void initialize(){
-        bmp = BitmapFactory.decodeResource(getResources(),R.drawable.p1);
+        bmp = BitmapFactory.decodeResource(getResources(),R.drawable.p18);
     }
 
     @Override
