@@ -35,9 +35,12 @@ public class SimpleView extends View {
     @Override
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
-        canvas.drawColor(Color.WHITE);
+        canvas.drawColor(Color.TRANSPARENT);
         Paint p = new Paint();
-        canvas.drawBitmap(bmp,0,10,p);
+        canvas.scale(0.7f, 0.7f);
+        canvas.rotate(60);
+        canvas.drawBitmap(bmp,250,100,p);
+
     }
 
 }
