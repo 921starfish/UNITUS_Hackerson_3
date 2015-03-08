@@ -1,6 +1,7 @@
 package com.example.q21starfish.unitus_hackerson_3;
 
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
@@ -14,11 +15,19 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
+    private ImageView mView;
+    private Bitmap mBitmap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mBitmap = BitmapFactory.decodeResource(getResources(),R.drawable.p1);
+        mView = new ImageView(this);
         setContentView(R.layout.activity_main);
+        // setContentView(mView);
     }
+
 
 
     @Override
