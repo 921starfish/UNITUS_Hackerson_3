@@ -27,6 +27,12 @@ public class SimpleView extends View {
         initialize();
     }
 
+    public SimpleView(Context context,Bitmap bit){
+        super(context);
+        this.bmp = bit;
+        initialize(bit);
+    }
+
     public SimpleView(Context context){
         super(context);
         initialize();
@@ -34,6 +40,15 @@ public class SimpleView extends View {
 
     public void initialize(){
         bmp = BitmapFactory.decodeResource(getResources(),R.drawable.p1);
+
+        WindowManager wm = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+        size = new Point();
+        disp.getSize(size);
+    }
+
+    public void initialize(Bitmap bit){
+        bmp = bit;
 
         WindowManager wm = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
