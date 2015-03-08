@@ -76,27 +76,8 @@ public class ViewTest extends View {
     }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-
-        //触る
-        if(event.getAction() == MotionEvent.ACTION_DOWN){
-            imageX = event.getX();
-            imageY = event.getY();
-        }
-        //触ったままスライド
-        else if(event.getAction() == MotionEvent.ACTION_MOVE){
-            imageX = event.getX();
-            imageY = event.getY();
-        }
-
-        //離す
-        else if(event.getAction() == MotionEvent.ACTION_UP){
-            imageX = event.getX();
-            imageY = event.getY();
-        }
-
         // 再描画の指示
         invalidate();
-
         return true;
     }
 }
