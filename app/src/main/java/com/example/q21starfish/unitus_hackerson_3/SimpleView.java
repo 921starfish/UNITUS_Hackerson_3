@@ -6,12 +6,16 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.util.AttributeSet;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 
 public class SimpleView extends View {
 
     private Bitmap bmp;
+    private Point size;
 
     public SimpleView(Context context, AttributeSet attrs,int defStyle){
         super(context,attrs,defStyle);
@@ -30,6 +34,11 @@ public class SimpleView extends View {
 
     public void initialize(){
         bmp = BitmapFactory.decodeResource(getResources(),R.drawable.p1);
+
+        WindowManager wm = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+        size = new Point();
+        disp.getSize(size);
     }
 
     @Override
@@ -38,8 +47,8 @@ public class SimpleView extends View {
         canvas.drawColor(Color.TRANSPARENT);
         Paint p = new Paint();
         canvas.scale(0.7f, 0.7f);
-        canvas.rotate(60);
-        canvas.drawBitmap(bmp,250,100,p);
+        canvas.rotate((int)(Math.random()*360));
+        canvas.drawBitmap(bmp,(int)(Math.random()*size.x),(int)(Math.random()*size.y),p);
 
     }
 
