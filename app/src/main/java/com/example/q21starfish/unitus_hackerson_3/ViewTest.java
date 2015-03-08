@@ -18,6 +18,9 @@ public class ViewTest extends View {
 
     private Bitmap[] bmp;
     private Point size;
+    private Paint mPaint;
+    private float imageX = 0f;
+    private float imageY = 0f;
 
     public ViewTest(Context context, AttributeSet attrs,int defStyle){
         super(context,attrs,defStyle);
@@ -70,5 +73,30 @@ public class ViewTest extends View {
             int y = (int)(Math.random()*size.y);
             canvas.drawBitmap(bmp[i], x, y, p);
         }
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        //触る
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            imageX = event.getX();
+            imageY = event.getY();
+        }
+        //触ったままスライド
+        else if(event.getAction() == MotionEvent.ACTION_MOVE){
+            imageX = event.getX();
+            imageY = event.getY();
+        }
+
+        //離す
+        else if(event.getAction() == MotionEvent.ACTION_UP){
+            imageX = event.getX();
+            imageY = event.getY();
+        }
+
+        // 再描画の指示
+        invalidate();
+
+        return true;
     }
 }
